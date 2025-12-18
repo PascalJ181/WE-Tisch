@@ -1,0 +1,325 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: WEScanTisch
+meta:
+  id: wrk_9fe336af53c945908071f4b70a40c92c
+  created: 1766040362690
+  modified: 1766040362690
+  description: ""
+collection:
+  - name: WEScanTisch
+    meta:
+      id: fld_28a66435025b4d5e975a7241a7796491
+      created: 1766040362704
+      modified: 1766040957945
+      sortKey: -1766040359742
+      description: ""
+    children:
+      - url: "{{BaseUrl_Test2}}WECreation"
+        name: WECreation
+        meta:
+          id: req_77d0c29bc1c842c2823e439949e1c7dc
+          created: 1766040362714
+          modified: 1766040362714
+          isPrivate: false
+          description: ""
+          sortKey: -1766040359741
+        method: POST
+        body:
+          mimeType: application/json
+          text: "{\r
+
+            \  \"WECreation\": [\r
+
+            \    {\r
+
+            \      \"Mandant\": \"100\",\r
+
+            \      \"Belegart\": \"EB\",\r
+
+            \      \"Belegnummer\": 22140530,\r
+
+            \      \"Belegdatum\": \"2024-03-28\",\r
+
+            \      \"LS-Datum\": \"2024-03-28\",\r
+
+            \      \"LieferscheinNr\": \"Test-2\",\r
+
+            \      \"WE-Lager\": 301,\r
+
+            \      \"Verteilergruppe\": \"\"\r
+
+            \    }\r
+
+            \  ]\r
+
+            }"
+        headers:
+          - name: stacktrace
+            value: "true"
+          - name: Username
+            value: "{{User}}"
+          - name: Password
+            value: "{{Passwort}}"
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{BaseUrl_Test2}}healthcheck"
+        name: Healthcheck
+        meta:
+          id: req_4e75700251294733bd759d7d74dfbec9
+          created: 1766040362721
+          modified: 1766040362721
+          isPrivate: false
+          description: ""
+          sortKey: -1766040359740
+        method: GET
+        parameters:
+          - name: stacktraceUser
+            value: "1"
+            disabled: false
+        headers:
+          - name: Username
+            value: "{{User}}"
+          - name: Password
+            value: "{{Password}}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{BaseUrl_Test2}}PurchaseDocument"
+        name: PurchaseDocument
+        meta:
+          id: req_eddfb38525f64e4c8b9844ec750c0b47
+          created: 1766040362730
+          modified: 1766040362730
+          isPrivate: false
+          description: ""
+          sortKey: -1766040359739
+        method: GET
+        headers:
+          - name: Username
+            value: "{{User}}"
+          - name: Password
+            value: "{{Password}}"
+          - name: Mandant
+            value: "100"
+          - name: BelegNummer
+            value: "22110221"
+          - name: Sprache
+            value: D
+          - name: stacktrace
+            value: "true"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{BaseUrl_Test2}}UniqueID"
+        name: UniqueID
+        meta:
+          id: req_995b4688e17a4b3eaa2a7b13ad02703b
+          created: 1766040362736
+          modified: 1766040362736
+          isPrivate: false
+          description: ""
+          sortKey: -1766040359738
+        method: POST
+        body:
+          mimeType: application/json
+          text: "{\r
+
+            \    \"UniqueID\": [\r
+
+            \        {\r
+
+            \            \"Mandant\": \"100\",\r
+
+            \            \"WENummer\": 38001343,\r
+
+            \            \"UniqueID\": \"Test-000001\",\r
+
+            \            \"Belegart\": \"EB\",\r
+
+            \            \"Belegnummer\": 22140542,\r
+
+            \            \"Belegposition\": 1,\r
+
+            \            \"Teil\": \"PJa-KaufteilSnr\",\r
+
+            \            \"Menge\": 100,\r
+
+            \            \"Lieferantencharge\": \"LiefCh1000-01\",\r
+
+            \            \"Hersteller\":   700291,\r
+
+            \            \"MPN\": \"XCC5883\",\r
+
+            \            \"SPN\": \"YDD5883\",\r
+
+            \            \"DateCode\": \"22/12\",\r
+
+            \            \"MSL\": \"2\",\r
+
+            \            \"Drucker\": \"\",\r
+
+            \            \"xVerfalldatum\": \"2024-10-31\",\r
+
+            \            \"xLEDBinning\": \"24\"\r
+
+            \        },\r
+
+            \    ]\r
+
+            }"
+        headers:
+          - name: stacktrace
+            value: "true"
+          - name: Username
+            value: "{{User}}"
+          - name: Password
+            value: "{{Password}}"
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{BaseUrl_Test2}}UniqueID"
+        name: DEL UniqueID
+        meta:
+          id: req_73e207986fc3436d8d95db9ea7712326
+          created: 1766040362742
+          modified: 1766040362742
+          isPrivate: false
+          description: ""
+          sortKey: -1766040359737
+        method: DELETE
+        headers:
+          - name: Mandant
+            value: "100"
+          - name: WENummer
+            value: "38001343"
+          - name: UniqueID
+            value: Test-000001
+          - name: Username
+            value: "{{User}}"
+          - name: Password
+            value: "{{Password}}"
+          - name: stacktrace
+            value: "true"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{BaseUrl_Test2}}WECompletion"
+        name: WECompl
+        meta:
+          id: req_6735b8aeea164c0e96bbc14529d6629c
+          created: 1766040362750
+          modified: 1766040362750
+          isPrivate: false
+          description: ""
+          sortKey: -1766040359736
+        method: POST
+        headers:
+          - name: Mandant
+            value: "100"
+          - name: WENummer
+            value: "38001343"
+          - name: Username
+            value: "{{User}}"
+          - name: Password
+            value: "{{Password}}"
+          - name: stacktrace
+            value: "true"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{BaseUrl_Test}}healthcheck"
+        name: "{{BaseUrl_Test}}healthcheck?stacktraceUser=1"
+        meta:
+          id: req_b2059de43b7f4bf197ee7d2ae605a891
+          created: 1766040362755
+          modified: 1766040362755
+          isPrivate: false
+          description: ""
+          sortKey: -1766040359735
+        method: GET
+        parameters:
+          - name: stacktraceUser
+            value: "1"
+            disabled: false
+        authentication:
+          type: basic
+          username: pasystem
+          password: AXO$1001Nach
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    authentication:
+      type: apikey
+      key: apikey
+      value: cGFhcGk6Y29tcGFrdA==
+      disabled: false
+      addTo: header
+    environment:
+      BaseUrl_Test2: https://localhost:14093/api/
+      BaseUrl_Prod: https://localhost:12093/api/
+      BaseUrl_Test: https://localhost:13093/api/
+      User: paapi
+      Password: |
+        compakt
+    environmentPropertyOrder:
+      "&":
+        - BaseUrl_Test2
+        - BaseUrl_Prod
+        - BaseUrl_Test
+        - User
+        - Password
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_85a696e355e4aea707fdff981a491df0aad09f79
+    created: 1766040374461
+    modified: 1766040374461
+environments:
+  name: Base Environment
+  meta:
+    id: env_85a696e355e4aea707fdff981a491df0aad09f79
+    created: 1766040362768
+    modified: 1766040362768
+    isPrivate: false
