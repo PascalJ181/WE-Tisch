@@ -11,7 +11,7 @@ collection:
     meta:
       id: fld_28a66435025b4d5e975a7241a7796491
       created: 1766040362704
-      modified: 1766040957945
+      modified: 1766044742247
       sortKey: -1766040359742
       description: ""
     children:
@@ -20,7 +20,7 @@ collection:
         meta:
           id: req_77d0c29bc1c842c2823e439949e1c7dc
           created: 1766040362714
-          modified: 1766040362714
+          modified: 1766044771286
           isPrivate: false
           description: ""
           sortKey: -1766040359741
@@ -58,7 +58,7 @@ collection:
           - name: stacktrace
             value: "true"
           - name: Username
-            value: "{{User}}"
+            value: "{{ 'my custom template logic' | urlencode }}"
           - name: Password
             value: "{{Passwort}}"
           - name: Content-Type
