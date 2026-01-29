@@ -11,56 +11,46 @@ collection:
     meta:
       id: fld_28a66435025b4d5e975a7241a7796491
       created: 1766040362704
-      modified: 1766044742247
+      modified: 1769604083882
       sortKey: -1766040359742
       description: ""
     children:
-      - url: "{{BaseUrl_Test2}}WECreation"
+      - url: "{{ _.BaseUrl_Prod }}WECreation"
         name: WECreation
         meta:
           id: req_77d0c29bc1c842c2823e439949e1c7dc
           created: 1766040362714
-          modified: 1766044771286
+          modified: 1769670772808
           isPrivate: false
           description: ""
           sortKey: -1766040359741
         method: POST
         body:
           mimeType: application/json
-          text: "{\r
-
-            \  \"WECreation\": [\r
-
-            \    {\r
-
-            \      \"Mandant\": \"100\",\r
-
-            \      \"Belegart\": \"EB\",\r
-
-            \      \"Belegnummer\": 22140530,\r
-
-            \      \"Belegdatum\": \"2024-03-28\",\r
-
-            \      \"LS-Datum\": \"2024-03-28\",\r
-
-            \      \"LieferscheinNr\": \"Test-2\",\r
-
-            \      \"WE-Lager\": 301,\r
-
-            \      \"Verteilergruppe\": \"\"\r
-
-            \    }\r
-
-            \  ]\r
-
-            }"
+          text: |-
+            {
+              "WECreation": [
+                {
+                  "Mandant": "110",
+                  "Belegart": "EB",
+                  "Belegnummer": 22140530,
+                  "Belegdatum": "2026-01-29",
+                  "LS-Datum": "2026-01-18",
+                  "LieferscheinNr": "Test-2",
+                  "WE-Lager": 301,
+                  "Verteilergruppe": ""
+                }
+              ]
+            }
         headers:
           - name: stacktrace
             value: "true"
           - name: Username
-            value: "{{ 'my custom template logic' | urlencode }}"
+            value: "{{ _.User }}"
+            disabled: true
           - name: Password
-            value: "{{Passwort}}"
+            value: "{{ _.Password }}"
+            disabled: true
           - name: Content-Type
             value: application/json
         settings:
@@ -71,12 +61,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{BaseUrl_Test2}}healthcheck"
+      - url: "{{ _.Healthcheck }}"
         name: Healthcheck
         meta:
           id: req_4e75700251294733bd759d7d74dfbec9
           created: 1766040362721
-          modified: 1766040362721
+          modified: 1769672293764
           isPrivate: false
           description: ""
           sortKey: -1766040359740
@@ -98,29 +88,48 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{BaseUrl_Test2}}PurchaseDocument"
+      - url: "{{ _.BaseUrl_Prod }}PurchaseDocument"
         name: PurchaseDocument
         meta:
           id: req_eddfb38525f64e4c8b9844ec750c0b47
           created: 1766040362730
-          modified: 1766040362730
+          modified: 1769669761429
           isPrivate: false
           description: ""
           sortKey: -1766040359739
         method: GET
+        parameters:
+          - name: Mandant
+            value: "110"
+            description: ""
+            disabled: false
+          - name: Belegnummer
+            value: "50202075"
+            description: ""
+            disabled: false
+          - name: Sprache
+            value: D
+            description: ""
+            disabled: false
         headers:
           - name: Username
             value: "{{User}}"
+            disabled: true
           - name: Password
             value: "{{Password}}"
+            disabled: true
           - name: Mandant
-            value: "100"
+            value: "110"
+            disabled: true
           - name: BelegNummer
             value: "22110221"
+            disabled: true
           - name: Sprache
             value: D
+            disabled: true
           - name: stacktrace
             value: "true"
+            disabled: true
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -129,70 +138,49 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{BaseUrl_Test2}}UniqueID"
+      - url: "{{ _.BaseUrl_Prod }}UniqueID"
         name: UniqueID
         meta:
           id: req_995b4688e17a4b3eaa2a7b13ad02703b
           created: 1766040362736
-          modified: 1766040362736
+          modified: 1769670924512
           isPrivate: false
           description: ""
           sortKey: -1766040359738
         method: POST
         body:
           mimeType: application/json
-          text: "{\r
-
-            \    \"UniqueID\": [\r
-
-            \        {\r
-
-            \            \"Mandant\": \"100\",\r
-
-            \            \"WENummer\": 38001343,\r
-
-            \            \"UniqueID\": \"Test-000001\",\r
-
-            \            \"Belegart\": \"EB\",\r
-
-            \            \"Belegnummer\": 22140542,\r
-
-            \            \"Belegposition\": 1,\r
-
-            \            \"Teil\": \"PJa-KaufteilSnr\",\r
-
-            \            \"Menge\": 100,\r
-
-            \            \"Lieferantencharge\": \"LiefCh1000-01\",\r
-
-            \            \"Hersteller\":   700291,\r
-
-            \            \"MPN\": \"XCC5883\",\r
-
-            \            \"SPN\": \"YDD5883\",\r
-
-            \            \"DateCode\": \"22/12\",\r
-
-            \            \"MSL\": \"2\",\r
-
-            \            \"Drucker\": \"\",\r
-
-            \            \"xVerfalldatum\": \"2024-10-31\",\r
-
-            \            \"xLEDBinning\": \"24\"\r
-
-            \        },\r
-
-            \    ]\r
-
-            }"
+          text: |-
+            {
+                "UniqueID": [
+                    {
+                        "Mandant": "110",
+                        "WENummer": 50302268,
+                        "UniqueID": "Test-000001",
+                        "Belegart": "EB",
+                        "Belegnummer": 50202076,
+                        "Belegposition": 1,
+                        "Teil": "4711",
+                        "Menge": 2000,
+                        "Lieferantencharge": "LiefCh1000-01",
+                        "Hersteller":   100016,
+                        "MPN": "HerstellerTeileNr",
+                        "SPN": "LieferantenNr",
+                        "DateCode": "24/48",
+                        "MSL": "2",
+                        "Drucker": ""
+                    },
+                ]
+            }
         headers:
           - name: stacktrace
             value: "true"
           - name: Username
             value: "{{User}}"
+            disabled: true
           - name: Password
             value: "{{Password}}"
+            disabled: true
           - name: Content-Type
             value: application/json
         settings:
@@ -234,25 +222,27 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{BaseUrl_Test2}}WECompletion"
+      - url: "{{ _.BaseUrl_Prod }}WECompletion"
         name: WECompl
         meta:
           id: req_6735b8aeea164c0e96bbc14529d6629c
           created: 1766040362750
-          modified: 1766040362750
+          modified: 1769672176862
           isPrivate: false
           description: ""
           sortKey: -1766040359736
         method: POST
         headers:
           - name: Mandant
-            value: "100"
+            value: "110"
           - name: WENummer
-            value: "38001343"
+            value: "50302269"
           - name: Username
             value: "{{User}}"
+            disabled: true
           - name: Password
             value: "{{Password}}"
+            disabled: true
           - name: stacktrace
             value: "true"
         settings:
@@ -291,31 +281,57 @@ collection:
             store: true
           rebuildPath: true
     authentication:
-      type: apikey
-      key: apikey
-      value: cGFhcGk6Y29tcGFrdA==
+      type: basic
+      useISO88591: false
+      username: paapi
+      password: WE-Tisch
       disabled: false
-      addTo: header
     environment:
       BaseUrl_Test2: https://localhost:14093/api/
-      BaseUrl_Prod: https://localhost:12093/api/
+      BaseUrl_Prod: http://PRO-CL01445.pa.paad:23053/api/web/v1/x/stockreceipt/
       BaseUrl_Test: https://localhost:13093/api/
       User: paapi
-      Password: |
-        compakt
-    environmentPropertyOrder:
-      "&":
-        - BaseUrl_Test2
-        - BaseUrl_Prod
-        - BaseUrl_Test
-        - User
-        - Password
+      Password: WE-Tisch
+      Healthcheck: http://PRO-CL01445.pa.paad:23053/api/web/v1/debug/ping
 cookieJar:
   name: Default Jar
   meta:
     id: jar_85a696e355e4aea707fdff981a491df0aad09f79
     created: 1766040374461
-    modified: 1766040374461
+    modified: 1769670764456
+  cookies:
+    - id: 6ccb71cd-5b44-47da-a8ef-ea3290d6e421
+      key: JSESSIONID
+      value: 06E51E05DBBF8BBAC7654419178CDC4F1693E7B5C689.ccidev-de-009004002-dev-a-pas
+      domain: localhost
+      path: /api
+      secure: false
+      httpOnly: true
+      hostOnly: true
+    - id: d84393ce-242f-4cf6-8d83-798d9c39d5a7
+      key: JSESSIONID
+      value: 3A1B08CAAFC5E5382A498B53E93D5C198CB28FEE2655.ccidev-de-009004002-dev-a-pas
+      domain: 127.0.0.1
+      path: /api
+      secure: false
+      httpOnly: true
+      hostOnly: true
+    - id: 4bc5496c-5297-4161-aab3-865f869657a4
+      key: JSESSIONID
+      value: 305D274A1F9B7D42F5F9092C54759D71DEEAB90CB95B.ccidev-de-009004002-dev-a-pas
+      domain: pro-cl01445
+      path: /api
+      secure: false
+      httpOnly: true
+      hostOnly: true
+    - id: 09cda0b9-71e9-491c-aa77-d66f4ed3318f
+      key: JSESSIONID
+      value: 9DD27ACF45337E9521F4C12A808F423DD7F5C8981D8B.ccidev-de-009004002-dev-a-pas
+      domain: pro-cl01445.pa.paad
+      path: /api
+      secure: false
+      httpOnly: true
+      hostOnly: true
 environments:
   name: Base Environment
   meta:
