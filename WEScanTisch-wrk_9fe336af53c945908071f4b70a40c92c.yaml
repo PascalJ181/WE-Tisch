@@ -20,7 +20,7 @@ collection:
         meta:
           id: req_77d0c29bc1c842c2823e439949e1c7dc
           created: 1766040362714
-          modified: 1769670772808
+          modified: 1769677804220
           isPrivate: false
           description: ""
           sortKey: -1766040359741
@@ -30,29 +30,35 @@ collection:
           text: |-
             {
               "WECreation": [
-                {
-                  "Mandant": "110",
-                  "Belegart": "EB",
-                  "Belegnummer": 22140530,
-                  "Belegdatum": "2026-01-29",
-                  "LS-Datum": "2026-01-18",
-                  "LieferscheinNr": "Test-2",
-                  "WE-Lager": 301,
-                  "Verteilergruppe": ""
-                }
-              ]
+              {
+               "Mandant": "110",
+               "Belegart": "EB",
+               "Belegnummer": 22140530,
+               "Belegdatum": "2026-01-29",
+               "LS-Datum": "2026-01-18",
+               "LieferscheinNr": "Test-2",
+               "WE-Lager": 301,
+               "Verteilergruppe": ""
+              }
+             ]
             }
+        parameters:
+          - name: Mandant
+            value: "110"
+            description: ""
+            disabled: true
         headers:
+          - name: Content-Type
+            value: application/json
           - name: stacktrace
             value: "true"
+            disabled: true
           - name: Username
             value: "{{ _.User }}"
             disabled: true
           - name: Password
             value: "{{ _.Password }}"
             disabled: true
-          - name: Content-Type
-            value: application/json
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -93,7 +99,7 @@ collection:
         meta:
           id: req_eddfb38525f64e4c8b9844ec750c0b47
           created: 1766040362730
-          modified: 1769669761429
+          modified: 1769672493862
           isPrivate: false
           description: ""
           sortKey: -1766040359739
@@ -129,7 +135,7 @@ collection:
             disabled: true
           - name: stacktrace
             value: "true"
-            disabled: true
+            disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -227,16 +233,36 @@ collection:
         meta:
           id: req_6735b8aeea164c0e96bbc14529d6629c
           created: 1766040362750
-          modified: 1769672176862
+          modified: 1769679429851
           isPrivate: false
           description: ""
           sortKey: -1766040359736
         method: POST
-        headers:
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"WENummer": 50302269,
+            	"Mandant" : "110"
+            }
+        parameters:
           - name: Mandant
             value: "110"
+            description: ""
+            disabled: true
           - name: WENummer
             value: "50302269"
+            description: ""
+            disabled: true
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Mandant
+            value: "110"
+            disabled: true
+          - name: WENummer
+            value: "50302269"
+            disabled: true
           - name: Username
             value: "{{User}}"
             disabled: true
@@ -298,9 +324,9 @@ cookieJar:
   meta:
     id: jar_85a696e355e4aea707fdff981a491df0aad09f79
     created: 1766040374461
-    modified: 1769670764456
+    modified: 1769679408451
   cookies:
-    - id: 6ccb71cd-5b44-47da-a8ef-ea3290d6e421
+    - id: 5a0be886-8baa-4ebe-bfa0-fa56521a53ee
       key: JSESSIONID
       value: 06E51E05DBBF8BBAC7654419178CDC4F1693E7B5C689.ccidev-de-009004002-dev-a-pas
       domain: localhost
@@ -308,7 +334,7 @@ cookieJar:
       secure: false
       httpOnly: true
       hostOnly: true
-    - id: d84393ce-242f-4cf6-8d83-798d9c39d5a7
+    - id: 0faaabee-ab5a-40e0-aa58-3064f0a7afd2
       key: JSESSIONID
       value: 3A1B08CAAFC5E5382A498B53E93D5C198CB28FEE2655.ccidev-de-009004002-dev-a-pas
       domain: 127.0.0.1
@@ -316,7 +342,7 @@ cookieJar:
       secure: false
       httpOnly: true
       hostOnly: true
-    - id: 4bc5496c-5297-4161-aab3-865f869657a4
+    - id: 5e22b43a-a4b6-4cd0-afc9-fcbe6ee532dd
       key: JSESSIONID
       value: 305D274A1F9B7D42F5F9092C54759D71DEEAB90CB95B.ccidev-de-009004002-dev-a-pas
       domain: pro-cl01445
@@ -324,9 +350,9 @@ cookieJar:
       secure: false
       httpOnly: true
       hostOnly: true
-    - id: 09cda0b9-71e9-491c-aa77-d66f4ed3318f
+    - id: c7957046-e021-4adc-a50a-f210be56e80b
       key: JSESSIONID
-      value: 9DD27ACF45337E9521F4C12A808F423DD7F5C8981D8B.ccidev-de-009004002-dev-a-pas
+      value: F3891654D91B009F5CF9F2489D5C3FA40D684771DD58.ccidev-de-009004002-dev-a-pas
       domain: pro-cl01445.pa.paad
       path: /api
       secure: false
